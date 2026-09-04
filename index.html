@@ -359,6 +359,8 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            text-decoration: none;
+            transition: all 0.2s ease;
         }
 
         .action-btn:hover {
@@ -463,6 +465,207 @@
         .feature-card p {
             color: var(--text-muted);
             font-size: 0.95rem;
+        }
+
+        /* Audit Preview Section */
+        .audit-section-heading h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            max-width: 800px;
+        }
+
+        .audit-section-heading h2 span {
+            color: var(--accent-green);
+        }
+
+        .audit-card {
+            background: var(--card-navy);
+            border: 1px solid var(--border-navy);
+            border-radius: 16px;
+            padding: 32px;
+            width: 100%;
+            margin-top: 40px;
+            text-align: left;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .audit-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border-navy);
+            margin-bottom: 32px;
+        }
+
+        .audit-target h3 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .audit-target p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .audit-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .audit-btn {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--border-navy);
+            background: var(--bg-navy);
+            color: var(--text-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .audit-btn:hover {
+            border-color: var(--accent-green);
+            color: var(--accent-green);
+        }
+
+        .audit-btn.primary {
+            background: var(--accent-green);
+            color: var(--bg-navy);
+            border-color: var(--accent-green);
+        }
+
+        .audit-btn.primary:hover {
+            background: var(--accent-green-hover);
+        }
+
+        .audit-overview-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (max-width: 850px) {
+            .audit-overview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .score-box {
+            background: var(--bg-navy);
+            border: 1px solid var(--border-navy);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 8px solid var(--border-navy);
+            border-top-color: #ff6b6b;
+            border-right-color: #f7d070;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .score-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-total {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .score-label {
+            font-weight: 700;
+            color: #ff6b6b;
+            font-size: 0.95rem;
+        }
+
+        .audit-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .metric-card {
+            background: var(--bg-navy);
+            border: 1px solid var(--border-navy);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .metric-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .metric-score {
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .metric-score.poor {
+            background: rgba(224, 86, 36, 0.15);
+            color: #ff6b6b;
+        }
+
+        .metric-score.warn {
+            background: rgba(235, 179, 54, 0.15);
+            color: #f7d070;
+        }
+
+        .metric-score.good {
+            background: rgba(32, 227, 99, 0.15);
+            color: var(--accent-green);
+        }
+
+        .metric-bar {
+            width: 100%;
+            height: 6px;
+            background: var(--card-navy);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .metric-fill {
+            height: 100%;
+            border-radius: 3px;
+        }
+
+        .metric-desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
         /* Pricing Section */
@@ -647,6 +850,7 @@
         </a>
         <div class="nav-links">
             <a href="#features">Features</a>
+            <a href="#audit">Audit Tool</a>
             <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
             <button class="nav-btn">Sign In</button>
@@ -741,21 +945,21 @@
                             <td>apexlaw-example.com</td>
                             <td><span class="status-tag"><i class="ti ti-device-mobile-off"></i> Not Mobile Friendly</span></td>
                             <td>J. Sterling (Owner)</td>
-                            <td><button class="action-btn"><i class="ti ti-download"></i> Export Lead</button></td>
+                            <td><a href="#audit" class="action-btn"><i class="ti ti-report-analytics"></i> Audit Website</a></td>
                         </tr>
                         <tr>
                             <td><strong>Austin Dental Care</strong></td>
                             <td>austindental-old.com</td>
                             <td><span class="status-tag outdated"><i class="ti ti-gauge"></i> Slow Speed (1.2s)</span></td>
                             <td>Dr. M. Vance</td>
-                            <td><button class="action-btn"><i class="ti ti-download"></i> Export Lead</button></td>
+                            <td><a href="#audit" class="action-btn"><i class="ti ti-report-analytics"></i> Audit Website</a></td>
                         </tr>
                         <tr>
                             <td><strong>Precision HVAC</strong></td>
                             <td>precision-hvac-tx.com</td>
                             <td><span class="status-tag"><i class="ti ti-lock-off"></i> No SSL Certificate</span></td>
                             <td>R. Miller (Manager)</td>
-                            <td><button class="action-btn"><i class="ti ti-download"></i> Export Lead</button></td>
+                            <td><a href="#audit" class="action-btn"><i class="ti ti-report-analytics"></i> Audit Website</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -814,6 +1018,108 @@
         </div>
     </section>
 
+    <!-- Detailed Website Audit Preview Section -->
+    <section class="section-container" id="audit">
+        <div class="audit-section-heading">
+            <h2>Instant <span>Personalized Site Audits</span> that pitch for you.</h2>
+            <p style="color: var(--text-muted);">Generate comprehensive, client-ready website audit reports with a single click to instantly demonstrate value.</p>
+        </div>
+
+        <div class="audit-card">
+            <div class="audit-header">
+                <div class="audit-target">
+                    <h3><i class="ti ti-world-search" style="color: var(--accent-green);"></i> Audit Report: Apex Law Group</h3>
+                    <p>Scraped Target: https://apexlaw-example.com • Scraped 2 minutes ago</p>
+                </div>
+                <div class="audit-actions">
+                    <button class="audit-btn"><i class="ti ti-refresh"></i> Re-scan Site</button>
+                    <button class="audit-btn"><i class="ti ti-download"></i> Export PDF</button>
+                    <button class="audit-btn primary"><i class="ti ti-send"></i> Send Pitch Report</button>
+                </div>
+            </div>
+
+            <div class="audit-overview-grid">
+                <!-- Main Overall Score Ring -->
+                <div class="score-box">
+                    <div class="score-circle">
+                        <span class="score-value">42</span>
+                        <span class="score-total">/ 100</span>
+                    </div>
+                    <span class="score-label">Needs Urgent Redesign</span>
+                </div>
+
+                <!-- Breakdown Metrics Grid -->
+                <div class="audit-metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-head">
+                            <span><i class="ti ti-seo" style="color: var(--accent-green);"></i> SEO Score</span>
+                            <span class="metric-score poor">38 / 100</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 38%; background: #ff6b6b;"></div>
+                        </div>
+                        <div class="metric-desc">Missing meta tags & H1 headers</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-head">
+                            <span><i class="ti ti-gauge" style="color: var(--accent-green);"></i> Load Speed</span>
+                            <span class="metric-score warn">58 / 100</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 58%; background: #f7d070;"></div>
+                        </div>
+                        <div class="metric-desc">FCP: 3.4s (Unoptimized images)</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-head">
+                            <span><i class="ti ti-eye" style="color: var(--accent-green);"></i> Readability</span>
+                            <span class="metric-score warn">62 / 100</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 62%; background: #f7d070;"></div>
+                        </div>
+                        <div class="metric-desc">Low color contrast text</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-head">
+                            <span><i class="ti ti-link" style="color: var(--accent-green);"></i> Backlinks</span>
+                            <span class="metric-score poor">25 / 100</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 25%; background: #ff6b6b;"></div>
+                        </div>
+                        <div class="metric-desc">Only 4 active referring domains</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-head">
+                            <span><i class="ti ti-device-mobile" style="color: var(--accent-green);"></i> Mobile View</span>
+                            <span class="metric-score poor">15 / 100</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 15%; background: #ff6b6b;"></div>
+                        </div>
+                        <div class="metric-desc">Elements overlap on mobile</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-head">
+                            <span><i class="ti ti-shield-lock" style="color: var(--accent-green);"></i> Security</span>
+                            <span class="metric-score good">90 / 100</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 90%; background: var(--accent-green);"></div>
+                        </div>
+                        <div class="metric-desc">Valid SSL Certificate active</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Pricing Section -->
     <section class="section-container" id="pricing">
         <h2>Simple, Transparent Pricing</h2>
@@ -867,6 +1173,7 @@
     <footer id="contact">
         <div class="footer-links">
             <a href="#features">Features</a>
+            <a href="#audit">Audit Tool</a>
             <a href="#pricing">Pricing</a>
             <a href="mailto:support@scrapedesign-example.com">Contact Support</a>
         </div>
